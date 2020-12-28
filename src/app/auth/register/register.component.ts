@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
     }
     this.auth.register(newUser).subscribe(res => {
       console.log('user registered!', res);
-      window.location.href = "http://localhost:4200/authentication/login";
+      window.location.href = "https://xpensi-client.espinosakev24.vercel.app/login";
     }, error => {
       alert(error.error);
     })

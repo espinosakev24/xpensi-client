@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
     const user = this.loginForm.value;
     this.authService.login(user).subscribe((res: any) => {
       localStorage.setItem('auth_token', res.token);
-      window.location.href = "http://localhost:4200/boards";
+      window.location.href = "https://xpensi-client.espinosakev24.vercel.app/boards";
       // this.route.navigate(['boards']);
     }, error => {
       alert(error.error);

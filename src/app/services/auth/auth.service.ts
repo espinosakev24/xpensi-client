@@ -9,7 +9,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  authEndPoint: string = 'https://roan-pepper-blinker.glitch.me/auth';
+  authEndPoint: string = 'https://xpensi-client.espinosakev24.vercel.app/auth';
   private _logged$ = new Subject<void>();
   constructor(private http: HttpClient, private route: Router) {
   }
@@ -37,7 +37,7 @@ export class AuthService {
   }
   logout() {
     localStorage.removeItem('auth_token');
-    window.location.href = "http://localhost:4200/authentication/login";
+    window.location.href = "https://xpensi-client.espinosakev24.vercel.app/authentication/login";
     // this.route.navigate(['authentication', 'login'])
   }
 }
