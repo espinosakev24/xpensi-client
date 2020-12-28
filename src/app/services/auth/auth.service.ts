@@ -9,7 +9,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class AuthService {
-  authEndPoint: string = 'http://localhost:4000/auth';
+  authEndPoint: string = 'https://roan-pepper-blinker.glitch.me/auth';
   private _logged$ = new Subject<void>();
   constructor(private http: HttpClient, private route: Router) {
   }

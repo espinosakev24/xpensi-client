@@ -8,7 +8,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class RegistriesService {
-  registriesEndPoint = 'http://localhost:4000/registries';
+  registriesEndPoint = 'https://roan-pepper-blinker.glitch.me/registries';
   private authHeaderOptions = {
     headers: {
       'auth-token': localStorage.getItem('auth_token') as string
