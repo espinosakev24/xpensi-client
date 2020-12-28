@@ -1,0 +1,19 @@
+<mat-toolbar>
+    <button mat-icon-button class="example-icon" aria-label="App top icon">
+      <mat-icon>polymer</mat-icon>
+    </button>
+    <span>Xpensi App</span>
+    <span class="example-spacer"></span>
+    <small>{{user.first_name}} {{user.last_name}}</small>
+    <ng-template [ngIf]="user.id">
+      <button [matMenuTriggerFor]="menu" mat-icon-button aria-label="Button with icon for settings meny">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="clickLogOut()">
+          <mat-icon class="xa-logout-icon-flipped">login</mat-icon>
+          <span>Logout</span>
+        </button>
+      </mat-menu>
+    </ng-template>
+</mat-toolbar>

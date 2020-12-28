@@ -1,0 +1,62 @@
+<mat-card class="registries-container">
+  <app-add-registry-modal></app-add-registry-modal>
+  <!-- List of registries -->
+  
+  <div class="xa-registries-container">
+    <div *ngFor="let registry of getRegistries()" class="xa-registries-item">
+      <div fxLayout="column" fxLayoutAlign="space-between">
+        <div>
+          <div fxLayout="row" fxLayoutAlign="space-between" style="position: relative;">
+            <mat-card-title class="xa-card-item-title">{{registry.title}}</mat-card-title>
+            <div class="xa-card-options">
+              <button mat-icon-button
+                [matMenuTriggerFor]="menu"
+                aria-label="Card icon-button with a menu"
+                class="xa-card-delete"
+              >
+                <mat-icon>more_vert</mat-icon>
+              </button>
+              <mat-menu #menu="matMenu">
+                <button mat-menu-item (click)="openEditDialog(registry)">
+                  <mat-icon>edit</mat-icon>
+                  <span>Edit registry</span>
+                </button>
+                <button mat-menu-item (click)="deleteRegistry(registry)">
+                  <mat-icon class="xa-delete-icon">
+                    delete
+                  </mat-icon>
+                  <span>Delete registry</span>
+                </button>
+              </mat-menu>
+            </div>
+          </div>
+          <mat-card-subtitle class="xa-card-subtitle">
+            {{registry.description}}
+          </mat-card-subtitle>
+        </div>
+
+        <div class="xa-card-bottom" fxLayout="row" fxLayoutAlign="space-between">
+          <small class="xa-card-date">{{getFormatedDate(registry.reg_date)}}</small>
+          <div *ngIf="registry.amount == 0; then zeroContent"></div>
+          <ng-template #zeroContent>
+            <div selected class="xa-expense-chip-item income-item-color">
+              {{registry.amount}}
+            </div>
+          </ng-template>
+          <div *ngIf="registry.amount > 0; then incomeContent else expenseContent"></div>
+          <ng-template #incomeContent>
+            <div selected class="xa-expense-chip-item income-item-color">
+              +{{registry.amount}}
+            </div>
+          </ng-template>
+          <ng-template #expenseContent>
+            <div selected class="xa-expense-chip-item expense-item-color">
+              {{registry.amount}}
+            </div>
+          </ng-template>
+        </div>
+      </div>
+      <!-- <mat-divider></mat-divider> -->
+    </div>
+  </div>
+</mat-card>

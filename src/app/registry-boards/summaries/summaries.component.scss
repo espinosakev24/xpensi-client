@@ -1,0 +1,30 @@
+@import './../shared-styles';
+
+.xa-summary-header {
+    margin-bottom: 1rem;
+    .xa-summary-subtitle {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    .xa-summary-icon {
+        border: 1px solid rgb(177, 177, 177);
+        padding: .3rem;
+        border-radius: 50%;
+    }
+    .xa-spent-icon {
+        color: white;
+        background-color: $spent-color;
+        border: $spent-color 1px solid;
+    }
+    .xa-earned-icon {
+        color: white;
+        background-color: $earned-color;
+        border: $earned-color 1px solid;
+    }
+    .xa-total-icon {
+        color: white;
+        background-color: $total-color;
+        border: $total-color 1px solid;
+    }
+}

@@ -1,0 +1,30 @@
+<mat-card>
+    <h1 mat-dialog-title>Login</h1>
+    <form [formGroup]="loginForm" (submit)="onSubmit()">
+        <div fxLayout="column">
+            <mat-form-field class="">
+                <mat-label>Email</mat-label>
+                <input type="email" matInput formControlName="email" placeholder="Ex. kevin@example.com">
+                <!-- <mat-hint>Nice!</mat-hint> -->
+                <mat-error *ngIf="f.email.errors?.email">
+                    Please enter a valid email address
+                </mat-error>
+                <mat-error *ngIf="f.email.errors?.required">
+                    Email is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field class="">
+                <mat-label>Password</mat-label>
+                <input type="password" matInput formControlName="password" placeholder="***********">
+                <mat-error *ngIf="f.password.errors?.required">
+                    Password is <strong>required</strong>
+                </mat-error>
+            </mat-form-field>
+            <br>
+            <button mat-raised-button color="primary" type="submit">Login</button>
+        </div>
+    </form>
+</mat-card>
+<div class="xa-hint-box">
+    <mat-hint>Not registered? </mat-hint> <a [routerLink]="['/authentication', 'register']">Create an account!</a>
+</div>

@@ -1,0 +1,40 @@
+$soft-border: rgba(0,0,0,.12) solid 1px;
+$earned-color: #A9DBC7;
+$spent-color: #FAA49E;
+// $spent-color: #f44336;
+$total-color: #b9a2e2;
+.xa-registries-container {
+    max-height: 20rem;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    box-sizing: border-box;
+
+    &:hover {
+        overflow-y: scroll;
+    }
+    /* width */
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+    /* Track */
+    &::-webkit-scrollbar-track {
+        background: rgba(71, 71, 71, 0.041);
+    }
+    /* Handle */
+    &::-webkit-scrollbar-thumb {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        background: rgba(0,0,0,.12);
+    }
+    /* Handle on hover */
+    &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0,0,0,.12);
+    }
+}
+.xa-button-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+}

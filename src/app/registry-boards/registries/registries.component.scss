@@ -1,0 +1,29 @@
+@import './../shared-styles';
+.xa-registries-item {
+    border-bottom: $soft-border;
+    margin: 1rem 0;
+    .xa-card-item-title {
+        display: flex;
+        align-items: center;
+        margin: 0;
+    }
+    .xa-card-subtitle {
+        margin-bottom: .5rem;
+    }
+    .xa-card-delete {
+        color: rgba(0,0,0,.4);
+    }
+    .xa-expense-chip-item {
+        position: relative;
+        color: $spent-color;
+    }
+    .income-item-color {
+        color: $earned-color;
+    }
+    .expense-item-color {
+        color: $spent-color;
+    }
+    .xa-card-date {
+        color: #b1b1b1;
+    }
+}
