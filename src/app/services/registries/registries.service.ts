@@ -24,6 +24,7 @@ export class RegistriesService {
   }
 
   getRegistries() {
+    console.log(environment.APIEndpoint);
     return this.http.get(this.registriesEndPoint, this.authHeaderOptions);
   }
   postRegistry(registry: IRegistry) {
