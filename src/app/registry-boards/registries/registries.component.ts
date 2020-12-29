@@ -56,7 +56,7 @@ export class RegistriesComponent implements OnInit, OnDestroy {
     })
   }
   getRegistries() {
-    return this.registries.reverse();
+    return this.registries;
   }
 
   getFormatedDate(date: string) {
