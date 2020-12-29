@@ -3,12 +3,13 @@ import { HttpClient } from '@angular/common/http';
 import { IRegistry } from './../../interfaces/registry';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class RegistriesService {
-  registriesEndPoint = 'https://roan-pepper-blinker.glitch.me/registries';
+  registriesEndPoint = `${environment.APIEndpoint}/registries`;
   private authHeaderOptions = {
     headers: {
       'auth-token': localStorage.getItem('auth_token') as string

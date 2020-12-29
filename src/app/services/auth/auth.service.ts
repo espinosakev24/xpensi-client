@@ -5,11 +5,12 @@ import jwt from 'jwt-decode';
 import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
 import { tap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  authEndPoint: string = 'https://roan-pepper-blinker.glitch.me/auth';
+  authEndPoint: string = `${environment.APIEndpoint}/auth`;
   private _logged$ = new Subject<void>();
   constructor(private http: HttpClient, private route: Router) {
   }
@@ -37,7 +38,7 @@ export class AuthService {
   }
   logout() {
     localStorage.removeItem('auth_token');
-    window.location.href = "https://xpensi-client.espinosakev24.vercel.app/authentication/login";
+    window.location.href = `${environment.ClientURL}/authentication/login`;
     // this.route.navigate(['authentication', 'login'])
   }
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms';
 import { IUserRegister } from 'src/app/interfaces/user';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -46,7 +47,7 @@ export class RegisterComponent implements OnInit {
     }
     this.auth.register(newUser).subscribe(res => {
       console.log('user registered!', res);
-      window.location.href = "https://xpensi-client.espinosakev24.vercel.app/authentication/login";
+      window.location.href = `${environment.ClientURL}/authentication/login`;
     }, error => {
       alert(error.error);
     })

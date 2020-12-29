@@ -4,6 +4,7 @@ import {Form, FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, V
 import {ErrorStateMatcher} from '@angular/material/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -35,7 +36,7 @@ export class LoginComponent implements OnInit {
     const user = this.loginForm.value;
     this.authService.login(user).subscribe((res: any) => {
       localStorage.setItem('auth_token', res.token);
-      window.location.href = "https://xpensi-client.espinosakev24.vercel.app/boards";
+      window.location.href = `${environment.ClientURL}/boards`;
       // this.route.navigate(['boards']);
     }, error => {
       alert(error.error);
