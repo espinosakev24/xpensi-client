@@ -1,26 +1,25 @@
-<mat-card>
-  <div fxLayout="row" fxLayoutAlign="space-between" class="xa-summary-header">
-    <mat-icon mat-list-icon class="xa-summary-icon xa-earned-icon">trending_up</mat-icon>
-    <mat-card-subtitle class="xa-summary-subtitle">Adquirido</mat-card-subtitle>
-  </div>
-  <mat-card-title class="xa-summary-title">+{{getEarnedAmount()}}</mat-card-title>
-</mat-card>
+<div class="xa-summary-items-container">
+  <mat-card class="xa-mat-card-summary-item">
+    <div fxLayout="row" fxLayoutAlign="space-between" class="xa-summary-header">
+      <mat-icon mat-list-icon class="xa-summary-icon xa-earned-icon">trending_up</mat-icon>
+      <mat-card-subtitle class="xa-summary-subtitle">Adquirido</mat-card-subtitle>
+    </div>
+    <mat-card-title class="xa-summary-title">+{{getEarnedAmount()}}</mat-card-title>
+  </mat-card>
+  
+  <mat-card class="xa-mat-card-summary-item">
+    <div fxLayout="row" fxLayoutAlign="space-between" class="xa-summary-header">
+      <mat-icon mat-list-icon class="xa-summary-icon xa-total-icon">attach_money</mat-icon>
+      <mat-card-subtitle class="xa-summary-subtitle">Total</mat-card-subtitle>
+    </div>
+    <mat-card-title class="xa-summary-title">${{getTotalAmount()}}</mat-card-title>
+  </mat-card>
 
-<br>
-
-<mat-card>
-  <div fxLayout="row" fxLayoutAlign="space-between" class="xa-summary-header">
-    <mat-icon mat-list-icon class="xa-summary-icon xa-total-icon">attach_money</mat-icon>
-    <mat-card-subtitle class="xa-summary-subtitle">Total</mat-card-subtitle>
-  </div>
-  <mat-card-title class="xa-summary-title">$ {{getTotalAmount()}}</mat-card-title>
-</mat-card>
-
-<br>
-<mat-card>
-  <div fxLayout="row" fxLayoutAlign="space-between" class="xa-summary-header">
-    <mat-icon mat-list-icon class="xa-summary-icon xa-spent-icon">trending_down</mat-icon>
-    <mat-card-subtitle class="xa-summary-subtitle">Gastado</mat-card-subtitle>
-  </div>
-  <mat-card-title class="xa-summary-title">{{getSpentAmount()}}</mat-card-title>
-</mat-card>
+  <mat-card class="xa-mat-card-summary-item">
+    <div fxLayout="row" fxLayoutAlign="space-between" class="xa-summary-header">
+      <mat-icon mat-list-icon class="xa-summary-icon xa-spent-icon">trending_down</mat-icon>
+      <mat-card-subtitle class="xa-summary-subtitle">Gastado</mat-card-subtitle>
+    </div>
+    <mat-card-title class="xa-summary-title">{{getSpentAmount()}}</mat-card-title>
+  </mat-card>
+</div>

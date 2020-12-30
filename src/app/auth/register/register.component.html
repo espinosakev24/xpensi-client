@@ -2,8 +2,8 @@
     <h1 mat-dialog-title>Register</h1>
     <form [formGroup]="registerForm" (submit)="onSubmit()">
         <div fxLayout="column">
-            <div fxLayout="row">
-                <mat-form-field class="xa-firstname-form-input">
+            <div fxLayout.md="row" fxLayout.sm="column">
+                <mat-form-field class="xa-firstname-form-input xa-name">
                     <mat-label>First name</mat-label>
                     <input type="text" matInput formControlName="first_name" placeholder="Ex. Kevin" required>
                     <!-- <mat-hint>Nice!</mat-hint> -->
@@ -11,7 +11,7 @@
                         First name is <strong>required</strong>
                     </mat-error>
                 </mat-form-field>
-                <mat-form-field class="">
+                <mat-form-field class="xa-name">
                     <mat-label>Last name</mat-label>
                     <input type="email" matInput formControlName="last_name" placeholder="Ex. Espinosa">
                     <!-- <mat-hint>Nice!</mat-hint> -->
@@ -34,7 +34,7 @@
             <mat-form-field class="">
                 <mat-label>Password</mat-label>
                 <input type="password" matInput formControlName="password"
-                       placeholder="***********">
+                       placeholder="***********" required>
                 <mat-error *ngIf="registerForm.controls['password'].errors?.required">
                     Password is <strong>required</strong>
                 </mat-error>

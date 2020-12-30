@@ -4,3 +4,8 @@
 .xa-firstname-form-input{
     margin-right: 10px;
 }
+.xa-name {
+    @media screen and (max-width: 401px){
+        width: 100%;
+    }
+}
