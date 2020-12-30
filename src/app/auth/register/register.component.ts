@@ -25,6 +25,9 @@ export class RegisterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.auth.currentUser().id) {
+      window.location.href = `${environment.ClientURL}/boards`;
+    }
     this.registerForm = this.formBuilder.group({
       first_name: ['', Validators.required],
       last_name: [''],

@@ -23,6 +23,9 @@ export class LoginComponent implements OnInit {
     });
   }
   ngOnInit(): void {
+    if (this.authService.currentUser().id) {
+      window.location.href = `${environment.ClientURL}/boards`;
+    }
     this.loginForm = this.formBuilder.group({
       email: ['', [Validators.email, Validators.required]],
       password: ['', Validators.required]
