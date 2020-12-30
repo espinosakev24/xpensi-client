@@ -1,12 +1,21 @@
 @import './../shared-styles';
 
-.xa-mat-card-summary-item {
-    margin-bottom: 1rem;
-}
 .xa-summary-items-container {
+    .xa-mat-card-summary-item {
+        margin-bottom: 1rem;
+        @media screen and (max-width: 599px) {
+            padding: 10px;
+            margin: 3px;
+        }
+        .xa-summary-title {
+            @media screen and (max-width: 599px) {
+                font-size: 15px !important;
+            }
+        }
+    }
     @media screen and (max-width: 599px){
         display: flex;
-        // margin-right: 1rem;
+        padding: 0 1rem;
     }
 }
 
@@ -19,9 +28,17 @@
         margin: 0;
     }
     .xa-summary-icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         border: 1px solid rgb(177, 177, 177);
         padding: .3rem;
         border-radius: 50%;
+        @media screen and (max-width: 599px) {
+            font-size: 15px;
+            height: 15px;
+            width: 15px;
+        }
     }
     .xa-spent-icon {
         color: white;
