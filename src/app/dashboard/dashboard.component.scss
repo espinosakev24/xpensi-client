@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@500&display=swap');
 .xa-card-title {
-    margin-bottom: 1rem;
+    margin-bottom: .5rem;
     h1 {
         margin: 0;
         font-family: 'Noto Sans TC', sans-serif;
@@ -9,4 +9,9 @@
 .xa-dashboard-container {
     // height: 70vh;
     // background-color: tomato;
+}
+.xa-registries-outer-container {
+    @media screen and (max-width: 599px) {
+        margin-top: 1rem;
+    }
 }

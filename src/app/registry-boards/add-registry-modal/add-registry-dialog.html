@@ -1,6 +1,6 @@
 <h1 mat-dialog-title>Añadir registro</h1>
 <form #registryForm="ngForm" (ngSubmit)="onSubmit(registryForm)">
-  <section fxLayout="row" fxLayoutAlign="space-between">
+  <section fxLayout="row" fxLayoutAlign="space-between" id="large-screen-section">
     <div class="xa-main-side-add-registry">
       <p>
         <mat-form-field appearance="legacy">
@@ -28,7 +28,7 @@
           <mat-hint>Una nota corta del registro</mat-hint>
         </mat-form-field>
       </p>
-      <br>
+
       <section class="xa-checkbox-type">
         <mat-radio-group [(ngModel)]="labelPosition" name="registryFactor">
           <div fxLayout="row" fxLayoutAlign="space-between">

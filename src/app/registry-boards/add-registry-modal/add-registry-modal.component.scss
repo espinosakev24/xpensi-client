@@ -7,3 +7,14 @@
     justify-content: center;
     align-items: center;
 }
+#large-screen-section {
+    @media screen and (max-width: 599px) {
+        display: block !important;
+    }
+}
+
+.xa-checkbox-type {
+    @media screen and (min-width: 599px) {
+        margin-top: 36px;
+    }
+}
